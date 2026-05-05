@@ -394,6 +394,8 @@ class Tools:
         RATE_LIMIT_REQUESTS_PER_MINUTE: int = Field(default=10, ge=1, le=60)
         RATE_LIMIT_TIMEOUT_SECONDS: int = Field(default=60, ge=10, le=3600)
         CACHE_MAX_AGE_MINUTES: int = Field(default=30, ge=1, le=1440)
+        MCP_HTTP_HOST = str = Field(default="0.0.0.0")
+        MCP_HTTP_PORT = str = Field(default="8080")
         
         @validator('SEARXNG_ENGINE_API_BASE_URL')
         def validate_searxng_url(cls, v):
